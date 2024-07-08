@@ -62,7 +62,9 @@ print(completion.choices[0].message)
 
 7. Add your [API key](https://platform.openai.com/api-keys) to the newly created `.env` file.
 
-8. Run the program:
+8. Download an email as a .eml file and replace the file's path in emailer.py
+
+9. Run the program:
 
 Run:
 
