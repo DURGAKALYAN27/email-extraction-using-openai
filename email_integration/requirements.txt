@@ -1,0 +1,5 @@
+llama-index-llms-openai==0.1.25
+llama-index-readers-file==0.1.27
+llama-index-program-openai==0.1.6
+unstructured==0.14.9
+psutil==6.0.0

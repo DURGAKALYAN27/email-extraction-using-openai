@@ -1,0 +1,261 @@
+Delivered-To: durgakalyank2004@gmail.com
+Received: by 2002:a05:6214:548c:b0:6b5:120c:a4bf with SMTP id lg12csp3579570qvb;
+        Thu, 4 Jul 2024 05:02:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEdOtThvPj2vD/UdaSFRWwsJe9jpcgBB+atsKpJi/arR77NlROG0zEOpz4u3zSBdzi98ih3
+X-Received: by 2002:a6b:4a1a:0:b0:7f3:d884:bbd6 with SMTP id ca18e2360f4ac-7f66deb14a2mr158523839f.7.1720094544980;
+        Thu, 04 Jul 2024 05:02:24 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1720094544; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=Vj9/dlh0VrVegQJLeBJZcCu1EodeLU4mXk3R40vricCF7e1tcnWvyWMYsiIs4pBTxT
+         /2EK9aqJIj6yqsOOQ8o7zqrwGHYw6rb7pKNjbCQyXqqtwx6/CiKEN7xxUKbV1XYEngGI
+         vtHtlU8OCZaeFaGfd2Hn/D8+LTff3nZpHrqTr+AoTPK5pNHFByJJBk9mXUyv96uutcTB
+         MzVht/I0Q/XOCMItCvez5TwzW8dJdx2zOIq59zvODv5DHKrDVTl12SHwVy44Ympzv5V7
+         qKLl3q2Yl2CXP9VZv20O9NyyeVAA1/oUxr+g/jHGylk5HXZvPbZBNkVbPjS+ML6xaI3+
+         u+Ag==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:cc:to:from:dkim-signature;
+        bh=Waubkup1vFQ3knX0fGKC6cQSz7pNE+/9xARRAZVGkBc=;
+        fh=de3FarP/HhJa4xNivUco212vKGs/ImWg7MsJ4LgtdfE=;
+        b=gR2uG7wZTekBeEQIRB5AgUiqFwJuMg9VSy0jflyoIQPX5mc3Uhl7hGiiw+zPE4C+m3
+         mYFFU0dfAW7/SGvp3FVC0BwJTdiaWVAmLyhTzVE/nCR8ruKs8v5IfR0oZbBhy5oxrcCg
+         ttqzbcnFnv2dyE6oLHmoQgCgqybhYD05ORdrv25Gqmbo2MAAHkdBBWnFz0gDWlDog4PP
+         cpGw7rW6PjZsIwpb0dIUqEg++iz4o90tZmJijBkgK141LD7aPk6UoaeXQ1ML8LJ6MVDk
+         5qxefk3R4CfpvF2A1QTD710sBv2rEjh1fdKIpe0G0Ay7EOzh+i25TytD+AbbfxOrFfcQ
+         RK1A==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@netscout.com header.s=netscout.com.09.24.2020 header.b="X/CjEh7O";
+       arc=pass (i=1 spf=pass spfdomain=netscout.com dkim=pass dkdomain=netscout.com dmarc=pass fromdomain=netscout.com);
+       spf=pass (google.com: domain of prvs=0915167dea=deepthi.devadiga@netscout.com designates 67.231.149.170 as permitted sender) smtp.mailfrom="prvs=0915167dea=deepthi.devadiga@netscout.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netscout.com
+Return-Path: <prvs=0915167dea=deepthi.devadiga@netscout.com>
+Received: from mx0a-00196b01.pphosted.com (mx0a-00196b01.pphosted.com. [67.231.149.170])
+        by mx.google.com with ESMTPS id ca18e2360f4ac-7f61d217221si594469439f.132.2024.07.04.05.02.23
+        for <durgakalyank2004@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Jul 2024 05:02:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of prvs=0915167dea=deepthi.devadiga@netscout.com designates 67.231.149.170 as permitted sender) client-ip=67.231.149.170;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@netscout.com header.s=netscout.com.09.24.2020 header.b="X/CjEh7O";
+       arc=pass (i=1 spf=pass spfdomain=netscout.com dkim=pass dkdomain=netscout.com dmarc=pass fromdomain=netscout.com);
+       spf=pass (google.com: domain of prvs=0915167dea=deepthi.devadiga@netscout.com designates 67.231.149.170 as permitted sender) smtp.mailfrom="prvs=0915167dea=deepthi.devadiga@netscout.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netscout.com
+Received: from pps.filterd (m0096263.ppops.net [127.0.0.1])
+	by mx0a-00196b01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 464B3jvH011070
+	for <durgakalyank2004@gmail.com>; Thu, 4 Jul 2024 08:02:23 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=netscout.com; h=
+	cc:content-type:date:from:message-id:mime-version:subject:to; s=
+	netscout.com.09.24.2020; bh=Waubkup1vFQ3knX0fGKC6cQSz7pNE+/9xARR
+	AZVGkBc=; b=X/CjEh7OmrTJI0xOv+wFRYLFJeUnsPXkFAR4yIpGMuqIEI8SiRLi
+	UVQPPbdAGqAFoqgmApTz8NNu/f9dXokovdAUSMZ1k9Rgj6cKhFoU0/OTVAjcYL2c
+	1evZaRIP95y+jMnEO3wl15Q2mrwgPkusaaiVKf8lPWrixSWyqIWXOIXT36Auz6WV
+	YSdiARLhtKUssrnWxPIbgiYI/MP3vu9uEF+afF7n1P+tJ3HDrrKHr7JdAl+378Dy
+	FTTmbU/k0NG55H5SjeoMFTRZvf/toLgV6BbTY5uB3mWVFaq3RBzTmcwQgkKT/AgM
+	zjW+Q3FV3qfO3iDIdincWWsUpgwcUSfVSg==
+Received: from nam04-bn8-obe.outbound.protection.outlook.com (mail-bn8nam04lp2047.outbound.protection.outlook.com [104.47.74.47])
+	by mx0a-00196b01.pphosted.com (PPS) with ESMTPS id 405jasgebb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <durgakalyank2004@gmail.com>; Thu, 04 Jul 2024 08:02:23 -0400 (EDT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LhataldfbNXw4Se+CesYnIIGJ3JakV/k5PkMtq4ducgW/zt4hJPexAbhpf0bVfRe3mkTp43Rtxburh4SfsoHSUwB7h5Wc/6lJic2+BMXBQh8YRNiYN4LEuQXJk5udUJgApEJXX3CaGNgWfTZVx2sDGbvSXDhd/IVxPZocEG+qq0TliY3GO9DeJBaoHhbbsOMQcIBaoPb/kguAp+iNwkvYMa40570ubenPXoT1hExRi+mJ+TZO4/GuVrjqM9ognKSPG2llryGX0p9J+LIf6aDNMXn8W0iHXkQt4rQRsp/nWQCmDIF8WdYie2jf6hFajpzblPTgGRLxybuxuUz1Ivkgw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Waubkup1vFQ3knX0fGKC6cQSz7pNE+/9xARRAZVGkBc=;
+ b=Tjiu5kKdv/SIoUtbDzqGJGkZjAXv2uQPQANlZWSvKgf7GRRhFcgDTwr00Z7yG8SiYhFpYgozjkw36XDQKz5Q2SO3GD2YIhNEDvEu7iOt3XPUE/Xk2ZBMdhFeKJK0ohCwpen970NtLemKfXYHEEPwls3cgv9RJ8TSWSqbHJPYJ1nETB6j/n4yDwDQMrn7EnON6fJYt9SL9RagcF8Yq0s1jG+o4DAJ9gTVzw/SM9uUQVF9gHvas8iFzZB10Q0JAkoDhzDF1xmyAdTAkliHULzkIziSni88rC17EA3Q0nVyDlwbTP6BkgYjgdbW/RkJFeluFM3VrSTsIgYbUIR43OH7Dg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=netscout.com; dmarc=pass action=none header.from=netscout.com;
+ dkim=pass header.d=netscout.com; arc=none
+Received: from SN7PR01MB8042.prod.exchangelabs.com (2603:10b6:806:346::5) by
+ SJ0PR01MB6191.prod.exchangelabs.com (2603:10b6:a03:296::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7741.30; Thu, 4 Jul 2024 12:02:19 +0000
+Received: from SN7PR01MB8042.prod.exchangelabs.com
+ ([fe80::8587:ee11:b22e:c9e5]) by SN7PR01MB8042.prod.exchangelabs.com
+ ([fe80::8587:ee11:b22e:c9e5%6]) with mapi id 15.20.7741.017; Thu, 4 Jul 2024
+ 12:02:19 +0000
+From: "Devadiga, Deepthi" <Deepthi.Devadiga@netscout.com>
+To: "durgakalyank2004@gmail.com" <durgakalyank2004@gmail.com>
+CC: "Singh, Avinash" <Avinash.Singh@netscout.com>
+Subject: Email Content Extraction 
+Thread-Topic: Email Content Extraction 
+Thread-Index: AdrOCeD4TJxBHdcBRGqsLkZ/kkjN+Q==
+Date: Thu, 4 Jul 2024 12:02:19 +0000
+Message-ID: 
+ <SN7PR01MB8042C55A6118F88B7D9438CAE6DE2@SN7PR01MB8042.prod.exchangelabs.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SN7PR01MB8042:EE_|SJ0PR01MB6191:EE_
+x-ms-office365-filtering-correlation-id: 0d5811cf-8539-4a33-5765-08dc9c2127b9
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|376014|38070700018;
+x-microsoft-antispam-message-info: 
+ =?us-ascii?Q?OO2qufadNonyTTFC49zL2EIiUCDa07TWbYE+iNYS/S4Ln90vYG3PoYheMcgw?=
+ =?us-ascii?Q?s8xXoozdKpyozRQKGn8cg7lTTQWyL6E+5u9esR/JlaqRwB2nimyKsJC4OSbW?=
+ =?us-ascii?Q?KA1Q2/ZwdDNNDDb7ae55nlCrR5tOuREVlTVnjFsUvH4UozDqIN6H79L1gjRB?=
+ =?us-ascii?Q?ymle+L4g7f1KapgrswlfQmZLIi/BNKBIke/4vLSV415SJpCmeyP0NWS2rxZ0?=
+ =?us-ascii?Q?YGUQosQ8JACZ8AprGflDQTpXPmcXOjMUN0DjGmG9azdKwnR6bc97YWfYjkHh?=
+ =?us-ascii?Q?J9B5y5PEqhs1gUxIqR5miRh9ZH+H8TYWAoEF97bvO/z3RQdnMVFrGklkNkiz?=
+ =?us-ascii?Q?N4g4LOnF97KdYAjSm99PfaZaW91VUpT8YwvkzIs5yVD8S9gQevDmYEyb3A0A?=
+ =?us-ascii?Q?x1+QZOXQUh3hPMLER+C9xmo2q/9e/kWk0Qpes1xZ0oF9IAh6jA9UvXgOOLfV?=
+ =?us-ascii?Q?iQVuQ37ctRIuVTaGujEN3MtbwzqqAioqzBvYu8kaXrN26gHWHBMcJoPdlTQb?=
+ =?us-ascii?Q?OM+AnAxyrMqmIUP+wlVNrECGSPc04G/+NtqO2ioLzmMdE0njtpBKArcyhuLE?=
+ =?us-ascii?Q?DYlioigpOD+IEhvQwqE277kolt/kGrAbl+PIbMzapwrg9dsc00pOhQfDY4gn?=
+ =?us-ascii?Q?pn7gQqzOzPdBWtXHiU23mQGTyptUH5mPb2Mys24XkgDzQ1XF+Ib8S69YFT+C?=
+ =?us-ascii?Q?gsEEW6QnQkMROT3i8e9t1ETa2NW+2PQHzYTrPlnSvuf/jaIMf/KDkvnFZNF0?=
+ =?us-ascii?Q?DxxxEJN2OTFsiEkXmC4oz0b76Ed/9AgEVm0GfwyK/YL3hHncgaPIX8vJ2S5E?=
+ =?us-ascii?Q?P6wT2r5YU3IFvXOTa30NqlDMSMWL3eOsOp2fPd7CjAbqpgxJTrXS2YqvnbPd?=
+ =?us-ascii?Q?V90qC8zryFmWmr+AG1QgkuoGSLx5ug/WRD4uRpNnav0KcUOJS5KDFK1uIPaV?=
+ =?us-ascii?Q?VUg0LoP2uEdpV0VaUDgISuDSgfSKsFBPv8DkyhxiuDQDXIgaYaGYK1+8wwhZ?=
+ =?us-ascii?Q?LcCAzKbg2SukODvFFta7LcCCXliXqdFbArdcf1K7BwNUeBdqsefDdYC6grDW?=
+ =?us-ascii?Q?70fDt8GkKnkcbKiaoPdlMG5o4t2mIsZK84Sv9lvZzfgq0/A8BsAZ20SEFPlr?=
+ =?us-ascii?Q?iIEaDGSumtIWCK+ivERkKnOOpCi1XKDI0CtFuGB5kqDyA6HSqCdvh6geAe+u?=
+ =?us-ascii?Q?ioYVEgOJC/7iBmoLaVLk8eyak/nQ22TE1BMvJctDJ+HZSACWiKRRHKheG1O9?=
+ =?us-ascii?Q?rqesDGDE36+FEHYJdlIrE3xGW8K8rdXCHRbHXRWvEWujMFoaYMLD4DEbce8u?=
+ =?us-ascii?Q?aKmXPFqzQy6/WTK3idxlWmn0amhGkvSrvvPGjrx9GmSZfYYaQ405sYEAII/O?=
+ =?us-ascii?Q?5NljKro=3D?=
+x-forefront-antispam-report: 
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SN7PR01MB8042.prod.exchangelabs.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: 
+ =?us-ascii?Q?eMajuSEN+N/wEZiHZLKqm51yS2EJnKdt+SWZ9OucgFt9eIKMaiwbPCZ9rWcM?=
+ =?us-ascii?Q?ru6s1yyU9E8Zw67LKCifmM1X+KfDy//mEW1Y5vCWO8ZnxBykNWh+aJ3OJja8?=
+ =?us-ascii?Q?yk2te6MbTDAiPGVk1F6fIqpo4jHmeryzKF/zFdrLiJKuSjBnzfN0MoWSbRpv?=
+ =?us-ascii?Q?FovwB7iB4L0DjeKUTDkdrvMYMAIyUIlkLU2AvtRxLhuSvsWAVDhSXHeQwtnj?=
+ =?us-ascii?Q?Cc/pCpZ0gmbBFJooPRabjJzWWsxOMalJ0cjRjWSZEcK+1mn/c4xSAaLKcbGi?=
+ =?us-ascii?Q?N+rBaGmtVZWdRwlR97rkTgbSGASIiXEoyJQFOWNwaIR/c8UZnNOaZZi8E0nX?=
+ =?us-ascii?Q?9pysGWWbsoD76q5OnELFMzvCDTLXz2moOsXHJkNP8+4U98eQ6weZv5CNrZvV?=
+ =?us-ascii?Q?69DAgcdv8AuHfMVg20gIYJqEipPwe2Qt+NQsCyxupE3wVpswwgbLyTA+z2iY?=
+ =?us-ascii?Q?VBvLVOL83g39L1qQ5XwHDv+ZgSoeD20yhAjSbpcLS2Z78nrJXM5g7LE8laGX?=
+ =?us-ascii?Q?v2V4GS6yXd3a2Cx8bZboAJm3dHcwhkUMk5Xct2NljulrcoHNwBqi/mO9i5Qm?=
+ =?us-ascii?Q?iqKjB4a5zdcaEBsXBXOc6RJNpkNW3WeBYvYtbachceUyFUXu4XWZt4XGjdVt?=
+ =?us-ascii?Q?wFkAWtwCR4wkjpTpictChjGk6blYbE8ZpGq0s6xzolnkybapZ+Pwm4zbAKt0?=
+ =?us-ascii?Q?EfyTVj71joA59/UuXRZ+Q/QuP+6DS2DdJUHUxkIrUN223meKvi4CYR1bqphU?=
+ =?us-ascii?Q?PtVKsYxwHsAZQzVGVHp76nr3Ybhnjvae08w0yh1tfURFlqxJWPXGce6doer5?=
+ =?us-ascii?Q?BwfHZnB+caxw98f0qKd09VasxQgGf96gPVyso//cvjX2XBhYOWDq/1xTYZf2?=
+ =?us-ascii?Q?HqOsHEfy38K7/wZ+SYbpkyAmwSG6xdAxMMQma35voS/fg1ig2FhJcIyLATdx?=
+ =?us-ascii?Q?TzSYieRSjkouBgt+89z3Okdaa+W88lYvcT/zMwOJiIEoDEKKQknvJbj3i5xb?=
+ =?us-ascii?Q?xbDRP1q8aeFnyuZLJZOeEdHhAMISXcy9bW3aUkfJ/ISt88W4nfDMWCvagCnp?=
+ =?us-ascii?Q?TXF50eBpCa3YRH2ZOAezGN8e3aym+TS3gq2SQoqh81ziilwjJQxbzAnbU1j+?=
+ =?us-ascii?Q?PTY32w469vyoLozBW03vbMBV3z3+nkX7/wFajALEumQ20c2M1P/qVPrDuTAa?=
+ =?us-ascii?Q?dCBSHDfeSqP96XDg4V92POpZ6GQ24DQ1qRCV8vOsWO9lwVWmGk0l4wsFzHGN?=
+ =?us-ascii?Q?Pjc4EO1iviyZk26jxyXqA+7RUYhbbptyEyuZCCQdXqKi8428noyR7Oq7OO3Y?=
+ =?us-ascii?Q?ug1NWpSol6edhgWPtXgp3WH7IqTICxf5K7C30tWQzcDURFtB+X71FmP7Jw7e?=
+ =?us-ascii?Q?DUQHWvjgDq/FYs7DrYEkr24qI6hIbO7AOrl82irMbjl2AeTor+KvAZ3sceC5?=
+ =?us-ascii?Q?NxLPGemFssvkewMq/nugB26FjESDWTnXGj9p1GkaGNTCRch29W68sWv+Gpio?=
+ =?us-ascii?Q?e3vMfJ7S/URbRuOEulDP3bTdb29Lfhf/EST3itqAsapmXMww6pIuHkSsvOn9?=
+ =?us-ascii?Q?cemPYkWYf+OiXCVnJcX/mJIOCU0B0cIlYykOGefy?=
+Content-Type: multipart/alternative;
+	boundary="_000_SN7PR01MB8042C55A6118F88B7D9438CAE6DE2SN7PR01MB8042prod_"
+MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 
+	xbM+PqYZZswZpjmgMy2yC6tKH42h09CCx7dJApdIAyCqFiHIiHQGgAQmGbgSG2RM4P4D4RBEuRBRg7ueNm4EtoUhUm5VbV99gM0lEyVmsVzixDh/0PU/kNp5glpxnzn0AL1QgdmxR122GOJgaWrPHJIuITBOSEbX0xBA256uW3Sh5ZO0ACo33ykWzIR7rlMczhvOzcTLg46n5UomfbWP3SqHxOLu1TBKvG2u0uqWC4xysIV/Jrucq2GhogS3QHkbpGAeTWSnldNpGW4K0m8j5fBaAC0iTBgndwfsRQCeJ73pKk7qDIsAU5ZvIj7i3nBJj9JhxgvR4tkpEDiUfWyW/opdFmCdCfZGCL4lN1KwS1p52/sulXUFYeGkz5tcafk+4zAHvTezVmE4KDtrdwGGD/OX7EzPW2MLM9gSj4QZtD1EzACqZzENGWpHCSb3B393cJYGZPM17ZkxCnkCFCzHpmyeq7qEptlRIVlbp4sOMDfqhMYBBOjbF4xpJbSJ+wpt1gLz5ORYfbz7Uch5UsrCm6JYnhs6RH5rc8/1CTorbI6oheGiSdkm8SIcPkJz4dLvAX5BS6NJY5+JBiP+U1GZgldBMAwNa8kjhy9Omt0whXkKuL+g8wIpb+/73w/pDPGR
+X-OriginatorOrg: netscout.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SN7PR01MB8042.prod.exchangelabs.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0d5811cf-8539-4a33-5765-08dc9c2127b9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jul 2024 12:02:19.2373
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 54f11205-d4aa-4809-bd36-0b542199c5b2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: D9kMRnXROQIKalWlInaKmEdla0jjPStiTZceHNqsmWwcGl+Dt3IbJ1dBkgmbvH2/7xPO1HH33vxpWdk7IBJvyQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR01MB6191
+X-Proofpoint-ORIG-GUID: sJIvEUvtLZDqy7t9nqlfluTtbwHq7TyQ
+X-Proofpoint-GUID: sJIvEUvtLZDqy7t9nqlfluTtbwHq7TyQ
+X-Proofpoint-Spam-Details: rule=outbound_policy_notspam policy=outbound_policy score=0 adultscore=0
+ bulkscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 mlxlogscore=558
+ phishscore=0 clxscore=1015 mlxscore=0 priorityscore=1501 suspectscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407040085
+
+--_000_SN7PR01MB8042C55A6118F88B7D9438CAE6DE2SN7PR01MB8042prod_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Durga,
+
+One of the use cases that we want to eventually implement is Email Data Ext=
+raction.  Pls do try this and let us know.
+
+https://docs.llamaindex.ai/en/stable/examples/usecases/email_data_extractio=
+n/
+
+Regards,
+Deepthi
+
+--_000_SN7PR01MB8042C55A6118F88B7D9438CAE6DE2SN7PR01MB8042prod_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:11.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Hi Durga,<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">One of the use cases that we want to eventually impl=
+ement is Email Data Extraction.&nbsp; Pls do try this and let us know.&nbsp=
+;
+<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><a href=3D"https://docs.llamaindex.ai/en/stable/exam=
+ples/usecases/email_data_extraction/">https://docs.llamaindex.ai/en/stable/=
+examples/usecases/email_data_extraction/</a><o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Regards,<o:p></o:p></p>
+<p class=3D"MsoNormal">Deepthi<o:p></o:p></p>
+</div>
+</body>
+</html>
+
+--_000_SN7PR01MB8042C55A6118F88B7D9438CAE6DE2SN7PR01MB8042prod_--
