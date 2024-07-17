@@ -51,7 +51,7 @@ print(completion.choices[0].message)
 5. Install the requirements:
 
    ```bash
-   $ cd email-integration
+   $ cd email_integration
    $ pip install -r requirements.txt
    ```
 
