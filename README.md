@@ -1,6 +1,6 @@
 # Extract From Email Using OpenAI
 
-You can extract the contents of an email
+You can extract the contents of an email.
 
 ## Basic request
 
@@ -30,7 +30,7 @@ print(completion.choices[0].message)
 3. Navigate into the project directory:
 
    ```bash
-   $ cd email-integration
+   $ cd email-extraction-using-openai
    ```
 
 4. Create a new virtual environment:
@@ -51,6 +51,7 @@ print(completion.choices[0].message)
 5. Install the requirements:
 
    ```bash
+   $ cd email-integration
    $ pip install -r requirements.txt
    ```
 
